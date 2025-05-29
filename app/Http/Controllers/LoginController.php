@@ -94,6 +94,11 @@ class LoginController extends Controller
 
         return redirect()->route('login.list');
     }
+    public function forceDelete($id){
+        $users = User::onlyTrashed()->findOrFail($id);
+        $users->forceDelete();
+        return redirect()->route('login.list');
+    }
     public function edit($id){
         $user=User::findOrFail($id);
         return view('register.edit', compact('user'));

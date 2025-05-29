@@ -10,7 +10,8 @@
                 <th style="width: 10%; font-weight: bold; font-size: 2rem;">نام</th>
                 <th style="width: 20%; font-weight: bold; font-size: 2rem;">نام کاربری</th>
                 <th style="width: 10%; font-weight: bold; font-size: 2rem;">ایمیل</th>
-                <th style="width: 10%;">عملیات</th>
+                <th style="width: 10% ;font-weight: bold; font-size: 2rem;;">عملیات</th>
+                <th style="width: 10% ;font-weight: bold; font-size: 2rem;;">ویرایش</th>
             </tr>
             </thead>
             <tbody>

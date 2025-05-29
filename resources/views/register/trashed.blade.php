@@ -1,6 +1,6 @@
 @extends('layouts1.app')
 @section('content1')
-    <table>
+    <table style="width: 100%">
         <thead>
         <tr>
             <th style="width: 10%;text-align: center;justify-content: center;">نام</th>
@@ -17,7 +17,14 @@
                 <td>
                     <form action="{{route('restoreUser',$user->id)}}" method="get">
                         @csrf
-                        <button type="submit" class="btn btn-secondary">برگرداندن</button>
+                        <button type="submit" class="btn btn-secondary ">برگرداندن</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="{{route('forceDelete',$user->id)}}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-warning text-danger">حذف برای همیشه</button>
                     </form>
                 </td>
             </tr>

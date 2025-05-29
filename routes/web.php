@@ -18,6 +18,7 @@ Route::prefix('/login')->group(function () {
     Route::get('restoreUser/{id}', [LoginController::class, 'restore'])->name('restoreUser');
     Route::get('edit/{id}', [LoginController::class, 'edit'])->name('editUser');;
     Route::put('update/{id}', [LoginController::class, 'update'])->name('updateUser');
+    Route::delete('forceDelete/{id}', [LoginController::class, 'forceDelete'])->name('forceDelete');
 });
 
 Route::fallback(function () {
