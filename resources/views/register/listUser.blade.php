@@ -26,6 +26,12 @@
                             <button type="submit" class="btn btn-warning">حذف کاربر</button>
                         </form>
                     </td>
+                    <td>
+                        <form action="{{route('editUser',$user->id)}}" method="get">
+                            @csrf
+                            <button class="btn btn-info" type="submit"> ویرایش</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
             </tbody>

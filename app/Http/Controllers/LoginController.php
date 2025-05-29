@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -92,5 +93,20 @@ class LoginController extends Controller
         $users->restore();
 
         return redirect()->route('login.list');
+    }
+    public function edit($id){
+        $user=User::findOrFail($id);
+        return view('register.edit', compact('user'));
+    }
+    public function update(UpdateUserRequest $request, $id){
+        $user = User::findOrFail($id);
+        $validated = $request->validated();
+        $user->update([
+            'name' => $validated['name'],
+            'userName' => $validated['userName'],
+            'email' => $validated['email'],
+        ]);
+        return redirect()->route('login.list');
+
     }
 }
