@@ -43,7 +43,7 @@
                 <br>
                 <div class="confirm-password">
                     <label for="confirm-password">
-                        <input type="password" class="confirm-password bg-secondary text-light" name="password_confirmation">
+                        <input type="password" class="confirm-password bg-secondary text-light" name="password_confirm">
                     </label>
                     @if($errors->has('confirm-password'))
                         <div class="text-danger">{{$errors->first('confirm-password')}}</div>
@@ -51,7 +51,7 @@
                 </div>
                 <div class="policy">
                     <input type="checkbox" name="remember_token">
-                    <h3 >من را به خاطر بسپار</h3>
+                    <h5 >من را به خاطر بسپار</h5>
                 </div>
                 <br>
                 <button class="btn btn-success" type="submit">ثبت نام</button>

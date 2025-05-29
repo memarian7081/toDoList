@@ -25,8 +25,8 @@ class StoreUserRequest extends FormRequest
             "name" => "required|string",
             "userName" => "required|string",
             "email" => "required|string|email|unique:users,email",
-            "password" => "required|string|min:3|confirmed|max:15",
-            "password_confirmation" => "required|string|same:password",
+            "password" => "required|string|min:3|max:15",
+            "password_confirm" => "required|same:password",
 
         ];
 
@@ -47,10 +47,9 @@ class StoreUserRequest extends FormRequest
            'password.min' => 'حداقل کاراکتر لازم برای پسورد 3است',
            "password.max" => 'حداکثر کاراکتر لازم برای پسورد 15 است',
            "password.string" => "پسورد از نوع رشته باید باشد",
-           "password_confirmation.required" => "تکرار پسورد الزامی است",
-           "password_confirmation.string" => "تکرار پسورد باید از نوع رشته باشد",
-           "password_confirmation.same" => "نوع پسورد باید از نوع پسورد باشد",
-           "userName.confirmed" => "پسورد با تکرار برابر نیست",
+           "password_confirm.required" => "تکرار پسورد الزامی است",
+           "password_confirm.same" => "نوع پسورد باید از نوع پسورد باشد",
+
        ];
    }
 }

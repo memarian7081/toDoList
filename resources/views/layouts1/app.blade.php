@@ -15,9 +15,9 @@
     <title>to-do-list</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css')}}" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="{{asset('https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js')}}" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <!--
 
@@ -29,9 +29,9 @@
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/templatemo-chain-app-dev.css">
-    <link rel="stylesheet" href="assets/css/animated.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="{{asset('assets/css/templatemo-chain-app-dev.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/animated.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/owl.css')}}">
 
 </head>
 
@@ -56,31 +56,29 @@
         <div class="row">
             <div class="col-12">
                 <nav class="main-nav">
-                    <!-- ***** Logo Start ***** -->
                     <a href="index.html" class="logo" style="width: 5%">
-                        <img src="assets/images/logo.png" alt="Chain App Dev">
+                        <img src="{{asset('assets/images/logo.png')}}" alt="Chain App Dev">
                     </a>
-                    <!-- ***** Logo End ***** -->
-                    <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li class="scroll-to-section"><a href="#top" class="active">صفحه اصلی</a></li>
-                        <li class="scroll-to-section"><a href="#services">افزودن تسک</a></li>
+                        <li class="scroll-to-section"><a href="{{route('index')}}" class="active">صفحه اصلی</a></li>
+                        <li class="scroll-to-section"><a href="{{route('login.list')}}">افزودن تسک</a></li>
                         <li class="scroll-to-section"><a href="#about">درباره ما</a></li>
                         <li class="scroll-to-section"><a href="#newsletter">اخبار</a></li>
                         <li><div class="gradient-button"><a id="modal_trigger" href="{{route('login.create')}}"><i class="fa fa-sign-in-alt"></i> ثبت نام</a></div></li>
                         <li><div class="gradient-button"><a id="modal_trigger" href="{{route('login.login')}}"><i class="fa fa-sign-in-alt"></i>ورود</a></div></li>
+                        <li><div class="gradient-button"><a id="modal_trigger" href="{{route('logout')}}"><i class="fa fa-sign-in-alt"></i>خروج</a></div></li>
+
+
 
                     </ul>
                     <a class='menu-trigger'>
                         <span>Menu</span>
                     </a>
-                    <!-- ***** Menu End ***** -->
                 </nav>
             </div>
         </div>
     </div>
 </header>
-<!-- ***** Header Area End ***** -->
 
 <div id="modal" class="popupContainer" style="display:none;">
     <div class="popupHeader">
@@ -281,13 +279,13 @@
 
 
 <!-- Scripts -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/owl-carousel.js"></script>
-<script src="assets/js/animation.js"></script>
-<script src="assets/js/imagesloaded.js"></script>
-<script src="assets/js/popup.js"></script>
-<script src="assets/js/custom.js"></script>
+<script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
+<script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('assets/js/owl-carousel.js')}}"></script>
+<script src="{{asset('assets/js/animation.js')}}"></script>
+<script src="{{asset('assets/js/imagesloaded.js')}}"></script>
+<script src="{{asset('assets/js/popup.js')}}"></script>
+<script src="{{asset('assets/js/custom.js')}}"></script>
 </body>
 </html>
 
