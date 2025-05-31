@@ -44,7 +44,7 @@ class LoginController extends Controller
         return view('register.login');
     }
 
-    public function loginPost(Request $request)
+    public function loginUser(Request $request)
     {
         $credentials = $request->validate([
             'userName' => ['required'],
@@ -78,40 +78,5 @@ class LoginController extends Controller
         $users->delete();
 
         return redirect()->route('login.list');
-    }
-
-    public function trashedUser()
-    {
-        $users = User::onlyTrashed()->get();
-
-        return view('register.trashed', compact('users'));
-    }
-
-    public function restore($id)
-    {
-        $users = User::onlyTrashed()->findOrFail($id);
-        $users->restore();
-
-        return redirect()->route('login.list');
-    }
-    public function forceDelete($id){
-        $users = User::onlyTrashed()->findOrFail($id);
-        $users->forceDelete();
-        return redirect()->route('login.list');
-    }
-    public function edit($id){
-        $user=User::findOrFail($id);
-        return view('register.edit', compact('user'));
-    }
-    public function update(UpdateUserRequest $request, $id){
-        $user = User::findOrFail($id);
-        $validated = $request->validated();
-        $user->update([
-            'name' => $validated['name'],
-            'userName' => $validated['userName'],
-            'email' => $validated['email'],
-        ]);
-        return redirect()->route('login.list');
-
     }
 }

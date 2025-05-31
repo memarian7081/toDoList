@@ -2,7 +2,7 @@
 
 @section('content1')
     <div id="login" class="text-center" style="margin-top: 2%">
-        <form action="{{ route('login.post') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('login.user') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="userName" class="mt-2">نام کاربری</label>

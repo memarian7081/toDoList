@@ -61,11 +61,11 @@
                     </a>
                     <ul class="nav">
                         <li class="scroll-to-section"><a href="{{route('index')}}" class="active">صفحه اصلی</a></li>
-                        <li class="scroll-to-section"><a href="{{route('tasks.create')}}">افزودن تسک</a></li>
-                        <li class="scroll-to-section"><a href="{{route('login.list')}}">لیست کاربران</a></li>
-                        <li class="scroll-to-section"><a href="{{route('tasks.index')}}">تسک ها</a></li>
+                        <li class="scroll-to-section"><a href="{">افزودن تسک</a></li>
+                        <li class="scroll-to-section"><a href="">لیست کاربران</a></li>
+                        <li class="scroll-to-section"><a href="">تسک ها</a></li>
                         <li class="scroll-to-section"><a href="#newsletter">اخبار</a></li>
-                        <li><div class="gradient-button"><a id="modal_trigger" href="{{route('login.create')}}"><i class="fa fa-sign-in-alt"></i> ثبت نام</a></div></li>
+                        <li><div class="gradient-button"><a id="modal_trigger" href="{{route('register.create')}}"><i class="fa fa-sign-in-alt"></i> ثبت نام</a></div></li>
                         <li><div class="gradient-button"><a id="modal_trigger" href="{{route('login.login')}}"><i class="fa fa-sign-in-alt"></i>ورود</a></div></li>
                         @if(\Illuminate\Support\Facades\Auth::check())
                             <li><div class="gradient-button"><a id="modal_trigger" href="{{route('logout')}}"><i class="fa fa-sign-in-alt"></i>خروج</a></div></li>
