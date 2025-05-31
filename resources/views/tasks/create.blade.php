@@ -29,11 +29,12 @@
                 <span>اولویت:</span>
                 <select name="priority" id="priority">
                     <br>
-                    <option value="{{'veryLittle'}}">خیلی کم</option>
-                    <option value="{{'little'}}" >کم</option>
-                    <option value="{{'average'}}">متوسط</option>
-                    <option value="{{'aLot'}}">زیاد</option>
-                    <option value="{{'veryMuch'}}">خیلی زیاد</option>
+                    <option  disabled>اولویت ها</option>
+                    <option value="{{'خیلی کم'}}">خیلی کم</option>
+                    <option value="{{'کم'}}" >کم</option>
+                    <option value="{{'متوسط'}}">متوسط</option>
+                    <option value="{{'زیاد'}}">زیاد</option>
+                    <option value="{{'خیلی زیاد'}}">خیلی زیاد</option>
                 </select>
                 @if($errors->has('priority'))
                     <div class="text-warning">{{$errors->first('priority')}}</div>

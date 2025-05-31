@@ -24,7 +24,7 @@ class StoreTaskRequest extends FormRequest
         return [
             'name' => 'required',
             'due_date' => 'required|after:now',
-            'priority' => 'required|in:veryLittle,little,average,aLot,veryMuch',
+            'priority' => 'required|in:خیلی کم,کم,متوسط,زیاد,خیلی زیاد',
             'body' => 'nullable',
 
         ];

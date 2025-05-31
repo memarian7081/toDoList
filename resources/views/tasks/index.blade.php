@@ -36,7 +36,7 @@
                             </form>
                         </td>
                         <td>
-                            <form action="" method="get">
+                            <form action="{{route('tasks.edit',$task->id)}}" method="get">
                                 @csrf
                                 <button class="btn btn-secondary">ویرایش</button>
                             </form>

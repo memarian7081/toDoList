@@ -51,17 +51,26 @@ class TaskController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Task $task)
+    public function edit($id)
     {
-        //
+        $tasks =Task::findOrFail($id);
+        return view('tasks.edit',compact('tasks'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateTaskRequest $request, Task $task)
+    public function update(UpdateTaskRequest $request, $id)
     {
-        //
+        $tasks = Task::findOrFail($id);
+        $validated = $request->validated();
+        $tasks->update([
+            'name' => $validated['name'],
+            'due_date' => $validated['due_date'],
+            'priority' => $validated['priority'],
+            'body' => $validated['body'],
+        ]);
+        return redirect()->route('tasks.index',);
     }
 
     /**

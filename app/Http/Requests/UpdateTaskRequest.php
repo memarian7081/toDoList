@@ -24,7 +24,7 @@ class UpdateTaskRequest extends FormRequest
         return [
             'name' => 'required',
             'due_date' => 'required',
-            'priority' => 'required|in:veryLittle','little','average','aLot','veryMuch',
+            'priority' => 'required',
             'body' => 'nullable',
         ];
     }
@@ -34,7 +34,8 @@ class UpdateTaskRequest extends FormRequest
             'name.required' =>'فیلد نام نمیتوان خالی باشد',
             'due_date.required' =>'انتخاب زمان نمیتواند خالی باشد',
             'priority.required' =>'اولویت باید انتخاب شود',
-            'body.nullable' => 'توضیحات تسک الزامی نیست'
+            'body.nullable' => 'توضیحات تسک الزامی نیست',
+//            'priority.in' => 'اولویت باید یکی از موارد زیر باشد'
 
         ];
     }

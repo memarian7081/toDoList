@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->date('due_date');
-            $table->enum('priority', ['veryLittle','little','average','aLot','veryMuch'])->default('average');
+            $table->enum('priority', ['خیلی کم','کم','متوسط','زیاد','خیلی زیاد'])->default('متوسط');
             $table->text('body')->nullable();
             $table->timestamps();
             $table->softDeletes();
