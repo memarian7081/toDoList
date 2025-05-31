@@ -10,7 +10,7 @@ Route::get('/', [LoginController::class, 'index'])->name('index');
 Route::prefix('/login')->group(function () {
     Route::get('/', [LoginController::class, 'create'])->name('login.create');
     Route::post('/', [LoginController::class, 'register'])->name('register');
-    Route::get('/login1', [LoginController::class, 'login'])->name('login.login');
+    Route::get('/login', [LoginController::class, 'login'])->name('login.login');
     Route::post('/login', [LoginController::class, 'loginPost'])->name('login.post');
     Route::get('/list', [LoginController::class, 'listUser'])->name('login.list');
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
