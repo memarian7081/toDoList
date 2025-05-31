@@ -4,6 +4,9 @@
 <div class="container">
     @if(\Illuminate\Support\Facades\Auth::check())
         @if(\Illuminate\Support\Facades\Auth::user())
+            <h2>{{\Illuminate\Support\Facades\Auth::user()->userName}}</h2>
+            <hr>
+            <hr>
             <table>
                 <thead>
                 <tr>
@@ -21,15 +24,15 @@
                         <td style="width: 10%;font-size: 1.5rem;">{{$task->name}}</td>
                         <td style="width: 10%;font-size: 1.5rem;">{{$task->due_date}}</td>
                         <td style="width: 10%;font-size: 1.5rem;">{{$task->priority}}</td>
-                        <td style="width: 10%;font-size: 1.2rem;">
+                        <td style="width: 10%;font-size: 1.2rem;word-break: break-all">
                             @if(!empty($task->body))
                                 {{$task->body}}
                             @else
                                 <p>بدون توضیح</p>
                             @endif
                         </td>
-                        <td>
-                            <form action="{{route('tasks.destroy',$task->id)}}" method="post">
+                        <td style="padding-left: 5%">
+                            <form action="{{route('tasks.destroy',$task->id)}}" method="post" >
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger" type="submit">حذف</button>
