@@ -61,7 +61,7 @@
                     </a>
                     <ul class="nav">
                         <li class="scroll-to-section"><a href="{{route('index')}}" class="active">صفحه اصلی</a></li>
-                        <li class="scroll-to-section"><a href="">افزودن تسک</a></li>
+                        <li class="scroll-to-section"><a href="{{route('tasks.create')}}">افزودن تسک</a></li>
                         <li class="scroll-to-section"><a href="{{route('login.list')}}">لیست کاربران</a></li>
                         <li class="scroll-to-section"><a href="#newsletter">اخبار</a></li>
                         <li><div class="gradient-button"><a id="modal_trigger" href="{{route('login.create')}}"><i class="fa fa-sign-in-alt"></i> ثبت نام</a></div></li>

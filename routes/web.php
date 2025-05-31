@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -19,6 +20,12 @@ Route::prefix('/login')->group(function () {
     Route::get('edit/{id}', [LoginController::class, 'edit'])->name('editUser');;
     Route::put('update/{id}', [LoginController::class, 'update'])->name('updateUser');
     Route::delete('forceDelete/{id}', [LoginController::class, 'forceDelete'])->name('forceDelete');
+});
+Route::prefix('/tasks')->group(function () {
+    Route::get('/', [TaskController::class, 'index'])->name('tasks.index');
+    Route::get('/create', [TaskController::class, 'create'])->name('tasks.create');
+    Route::post('/create', [TaskController::class, 'store'])->name('tasks.store');
+    Route::delete('/destroy/{id}', [TaskController::class, 'destroy'])->name('tasks.destroy');
 });
 
 Route::fallback(function () {

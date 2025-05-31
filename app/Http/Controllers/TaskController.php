@@ -12,8 +12,8 @@ class TaskController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        //
+    {  $tasks = Task::all();
+        return view('tasks.index',compact('tasks'));
     }
 
     /**
@@ -21,7 +21,8 @@ class TaskController extends Controller
      */
     public function create()
     {
-        //
+        $tasks=Task::get();
+        return view('tasks.create',compact('tasks'));
     }
 
     /**
@@ -29,7 +30,14 @@ class TaskController extends Controller
      */
     public function store(StoreTaskRequest $request)
     {
-        //
+        $validated = $request->validated();
+        Task::create([
+            'name' => $validated['name'],
+            'due_date' => $validated['due_date'],
+            'priority' => $validated['priority'],
+            'body' => $validated['body'],
+        ]);
+        return redirect()->route('tasks.index');
     }
 
     /**
@@ -59,8 +67,10 @@ class TaskController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Task $task)
+    public function destroy($id)
     {
-        //
+        $tasks = Task::findOrFail($id);
+        $tasks->delete();
+        return redirect()->route('tasks.index');
     }
 }
