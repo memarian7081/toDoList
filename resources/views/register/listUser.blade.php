@@ -1,7 +1,6 @@
 @extends('layouts1.app')
 
 @section('content1')
-    <a href="{{ route('trashedUser') }}" class="btn btn-info mb-3">لیست کاربران حذف شده</a>
 
     <div class="table-responsive">
         <table class="table table-bordered text-center">
@@ -20,19 +19,7 @@
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->userName }}</td>
                     <td>{{ $user->email }}</td>
-                    <td>
-                        <form action="{{ route('delete', $user->id) }}" method="post">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-warning">حذف کاربر</button>
-                        </form>
-                    </td>
-                    <td>
-                        <form action="{{route('editUser',$user->id)}}" method="get">
-                            @csrf
-                            <button class="btn btn-info" type="submit"> ویرایش</button>
-                        </form>
-                    </td>
+
                 </tr>
             @endforeach
             </tbody>

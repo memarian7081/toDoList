@@ -62,7 +62,7 @@
                     <ul class="nav">
                         <li class="scroll-to-section"><a href="{{route('index')}}" class="active">صفحه اصلی</a></li>
                         <li class="scroll-to-section"><a href="{">افزودن تسک</a></li>
-                        <li class="scroll-to-section"><a href="">لیست کاربران</a></li>
+                        <li class="scroll-to-section"><a href="{{route('user.list')}}">لیست کاربران</a></li>
                         <li class="scroll-to-section"><a href="">تسک ها</a></li>
                         <li class="scroll-to-section"><a href="#newsletter">اخبار</a></li>
                         <li><div class="gradient-button"><a id="modal_trigger" href="{{route('register.create')}}"><i class="fa fa-sign-in-alt"></i> ثبت نام</a></div></li>

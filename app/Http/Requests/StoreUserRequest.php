@@ -22,8 +22,8 @@ class StoreUserRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "name" => "required|string",
-            "userName" => "required|string",
+            "name" => "required|string|min:3|max:50",
+            "userName" => "required|string|min:3|max:50|unique:users",
             "email" => "required|string|email|unique:users,email",
             "password" => "required|string|min:3|max:15",
             "password_confirm" => "required|same:password",
@@ -37,8 +37,13 @@ class StoreUserRequest extends FormRequest
        return [
            "name.required" => "وارد کردن نام الزامی است",
            "name.string" => " نامم بید از نوع رشته باشد",
+           'name.min' => "حداقل کاراکتر وارد شده 3 است ",
+           'name.max' => 'حداکثر کاراکتر وارد شده 30 است',
            "userName.required" => "نام کاربری الزامی است",
            "userName.string" => "نام کاربری باید از نوع رشته باشد",
+           'userName.min' => 'حداقل کاراکتر وارد شده 3 است',
+           'userName.max' => 'حداکثر کاراکتر وارد شده 50 است',
+           'userName.unique' => 'نام کاربری وارد شده تکراری است',
            "email.required" => "ایمیل الزامی است",
            "email.string" => "ایمیل باید از نوع رشته باشد",
            "email.email" => "نوع داده  ورودی باید از نوع ایمیل باشد",
